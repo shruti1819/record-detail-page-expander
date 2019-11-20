@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>47.0</apiVersion>
+    <description>This is a generic Custom Detail page.  It provides configuration for number of columns to display fields. It uses fields from the field set.  This component can be used on detail page of any SObject.</description>
+</AuraDefinitionBundle>
