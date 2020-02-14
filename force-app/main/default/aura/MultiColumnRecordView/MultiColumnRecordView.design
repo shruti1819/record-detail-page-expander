@@ -1,0 +1,4 @@
+<design:component>
+	<design:attribute name = "fieldsetName" label = "Enter FieldSet Name" />
+    <design:attribute name = "numOfColumns" label = "Enter Number of Columns" max = "6" min = "1" />
+</design:component>

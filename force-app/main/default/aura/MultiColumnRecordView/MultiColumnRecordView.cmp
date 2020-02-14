@@ -1,0 +1,45 @@
+<!--*****************************************************************************************
+* Component Name : MultiColumnRecordView
+*********************************************************************************************-->
+<aura:component implements = "force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId"
+                access = "global" 
+                controller = "MultiColumnRecordViewApexController">
+
+    <aura:attribute name = "cardTitle" type = "string" access = "global" />
+    <aura:attribute name = "fieldsetName" type = "string" />
+    <aura:attribute name = "fieldsList" type = "String[]" />
+    <aura:attribute name = "renderRecordForm" type = "Boolean" />
+    <aura:attribute name = "iconUrl" type = "string" access = "global" />
+    <aura:attribute name = "numOfColumns" type = "Integer" default = "4" />
+    <aura:attribute name = "recordId" type = "String" />
+    <aura:attribute name = "sObjectName" type = "String" />
+    
+    <aura:handler name = "init" value = "{!this}" action = "{!c.doInit}" />
+
+    <lightning:overlayLibrary aura:id = "overlayLib" />
+
+    <div class = "container">
+        <lightning:card title = "{!v.cardTitle+' '+'Details'}" iconName = "{!v.iconUrl}" class = "cardtitle">
+            <aura:set attribute = "actions">
+                <div class = "slds-no-flex">
+                    <lightning:button label = "Edit" 
+                                      title = "Edit" 
+                                      variant = "brand" 
+                                      value = "{!v.recordId}"
+                                      onclick = "{!c.editRecord }" />
+                </div>
+            </aura:set>
+
+            <aura:if isTrue = "{!v.renderRecordForm}">
+                <div class = "slds-p-left_x-small">
+                    <lightning:recordForm recordId = "{!v.recordId}" 
+                                          objectApiName = "{!v.sObjectName}"
+                                          fields = "{!v.fieldsList}" 
+                                          columns = "{!v.numOfColumns}" 
+                                          mode = "View" 
+                                          onsuccess = "{!c.myAction}" />
+                </div>
+            </aura:if>
+        </lightning:card>
+   </div>
+</aura:component>

@@ -1,0 +1,13 @@
+.THIS {
+}
+.THIS .field-title {
+    color: #808080
+}
+.THIS .cardtitle {
+    font-weight: bold;
+}
+.THIS .container {
+    border: 1px solid #d8dde6;
+    margin: 10px 20px 10px 20px;
+    background-color: white;
+}
